@@ -10,13 +10,8 @@ export function validator(value) {
   }
 
   const splitValue = value.split(',');
-  const isValidLat = /^\[?((-?[1-8]?[0-9])(\.\d+)?|(-?90(\.0+)?))$/.test(
-    splitValue[0]
-  );
-  const isValidLon =
-    /^\s?((-?((10)?|(1?[1-7]?))[0-9])(\.\d+)?|(-?180(\.0+)?))\]?$/.test(
-      splitValue[1]
-    );
+  const isValidLat = /^\[?((-?[1-8]?[0-9])(\.\d+)?|(-?90(\.0+)?))$/.test(splitValue[0]);
+  const isValidLon = /^\s?((-?((10)?|(1?[1-7]?))[0-9])(\.\d+)?|(-?180(\.0+)?))\]?$/.test(splitValue[1]);
 
   if (splitValue.length !== 2 || !isValidLat || !isValidLon) {
     return { error: 'Введите правильные координаты!' };

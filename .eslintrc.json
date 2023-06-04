@@ -1,31 +1,25 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "extends": "airbnb-base",
-    "overrides": [
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest"
-    },
-    "rules": {
-        "linebreak-style": 0,
-            "no-restricted-syntax": [
-                "error",
-                "LabeledStatement",
-                "WithStatement"
-            ],
-            "no-param-reassign": 0,
-            "no-unused-vars": 0
-      },
-      "overrides": [
-        {
-          "files": ["**/*.test.js"],
-          "plugins": ["jest"],
-          "extends": ["plugin:jest/recommended"],
-          "rules": { "jest/prefer-expect-assertions": "off" }
-        }
-      ]
+  "plugins": ["prettier"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "env": {
+    "node": 1,
+    "es6": true,
+    "browser": true,
+    "jest/globals": true
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.js"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": { "jest/prefer-expect-assertions": "off" }
     }
-    
+  ],
+  "parser": "@babel/eslint-parser"
+}

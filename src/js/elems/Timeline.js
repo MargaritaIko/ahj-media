@@ -31,9 +31,7 @@ export default class Timeline {
           <p class="timeline-item__text">${message}</p>
           <span class="timeline-item__geolocation">[${latitude}, ${longitude}]</span> &#128065
         </div>
-        <span class="timeline-item__created">${moment().format(
-          'DD.MM.YY HH:mm'
-        )}</span>
+        <span class="timeline-item__created">${moment().format('DD.MM.YY HH:mm')}</span>
       </li>`
     );
 
@@ -43,7 +41,6 @@ export default class Timeline {
   }
 
   scrollToLastMessage() {
-    this.timelineListEl.scrollTop =
-      this.timelineListEl.scrollHeight - this.timelineListEl.clientHeight;
+    this.timelineListEl.scrollTop = this.timelineListEl.scrollHeight - this.timelineListEl.clientHeight;
   }
 }
